@@ -1,0 +1,84 @@
+These files represent several years of on-and-off work. They are
+nowhere close to being organized in an easily runnable pipeline, and I
+do not recommend you try to get them there. File paths are hard-coded;
+intermediate steps are required in between running scripts; half the
+pipeline was run on a cluster, and half on a workstation; the code was
+written for a several-years-old version of R and sporadically updated
+to track changes in R and Bioconductor since then; a lot of code has
+become redundant by more recent additions to R/Bioc, but has not been
+removed; many of the methods used represented the state of the art at
+the time but have since been surpassed.
+
+Hence, I instead reccommend that you use these only as reference for
+what analyses were done for the paper, and *not* as a model for how to
+perform your own analysis. If I were to restart this analysis today, I
+would most definitely use the excellent
+[csaw package](https://bioconductor.org/packages/release/bioc/html/csaw.html),
+which did not yet exist at the time this analysis was performed.
+
+The following is a brief description of the purpose of each script in
+the `workstation scripts` folder. These are all the scripts that were
+run on my workstation. They are not listed in any particular order.
+
+* `annotate-peaks.R`: Adds information on nearby genes to peaks
+* `bin-peak-plots.R`: Generate a series of plots relating peak status
+  to RNA expression
+* `chipseq-fpkm-tables.R`: Compute the FPKM of each promoter in each
+  sample and sample group
+* `common.R`, `rnaseq-common.R`, `rnaseq-common2.R`: Series of utility
+  functions mostly relating to fitting GLMs with edgeR and limma for
+  differential expression/binding. These scripts are sourced by other
+  files.
+* `coverage-depth-histograms.R`: Generate coverage depth histograms
+  for sample QC
+* `cpgi-tables.R`: Annotate promoter differential binding results with
+  CpGi overlaps
+* `install-packages.R`: A script to install all the R/Bioc packages
+  required to run all these scripts (not to imply that doing so will
+  get you much closer to actually being able to run them on your
+  machine)
+* `make-faceted-maplots.R`: Generate grids of sample/group MA plots
+* `make-idrplots.R`: Generate the plot of IDR peak counts vs
+  time/celltype/histone mark
+* `make-maplots.R`: Generate sample/group MA plots
+* `make-mdsplots.R`: Generate MDS plots (aka PCoA plots) for each histone mark
+* `mergetables-edger3-ql.R`: Merge result tables for all histone marks
+  and RNA-seq into a single master table for each contrast
+* `merge-causal-tables.R`: Generate a series of tables meant for
+  comparing histone changes during naive activation to expression
+  changes from naive to memory, and vice versa
+* `moreplots.R`: Miscellaneous plots not covered by other scripts
+* `overLapper.R`: Utility script for plotting Venn diagrams (not
+  written by me; see file header for more info)
+* `pathway-h3k4me3-n0n1.R`: Run various pathway and gene-set
+  enrichment algorithms on the Naive D0 vs D1 results
+* `peak-edger-pipeline.R`: Script for running edgeR differential
+  binding on ChIP-seq peaks.
+* `promoter-aqm.R`: Run arrayQualityMetrics on promoter ChIP-seq data
+* `promoter-count.R`: Compute ChIP-seq read counts for promoters
+* `promoter-data-common2.R`: Script to load promoter ChIP-seq read
+  counts and related data
+* `promoter-diff-prep.R`: Script to load promoter ChIP-seq data in
+  preparation for differential binding analysis
+* `promoter-edger-dispersion-analysis.R`: Analyze promoter ChIP-seq
+  dispersions in each sample group to test for heteroskedasticity
+* `promoter-edger-pipeline3-groups-1kb.R`: Differential binding
+  analysis of 1kb-radius promoter ChIP-Seq counts
+* `promoter-edger-pipeline3-groups-2.5kb.R`: Differential binding
+  analysis of 2.5kb-radius promoter ChIP-Seq counts
+* `rnaseq-batch-correct.R`: Compute normalization factors to correct
+  for a batch effect in the RNA-seq data
+* `rnaseq-collapse-counts.R`: Script to collapse technical replicates
+  in RNA-seq data
+* `rnaseq-count.R`: Compute RNA-seq gene counts
+* `rnaseq-diff-prep.R`: Load RNA-seq data and prepare for differential
+  expression analysis
+* `rnaseq-edger-dispersion-analysis.R`: Analyze RNA-seq dispersions in
+  each sample group to test for heteroskedasticity
+* `rnaseq-edger-pipeline3.R`: The main script for differential expression analysis
+
+In addition to the above, a number of scripts could only be run on the
+Scripps cluster, due to memory or CPU requirements. These are in the
+`cluster scripts` folder and are listed below:
+
+(To be added)
