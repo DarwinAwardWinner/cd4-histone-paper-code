@@ -81,4 +81,22 @@ In addition to the above, a number of scripts could only be run on the
 Scripps cluster, due to memory or CPU requirements. These are in the
 `cluster scripts` folder and are listed below:
 
-(To be added)
+* `bigbin-count.R`: Count ChIP-Seq reads in 10kb bins across the
+  genome (see the csaw paper)
+* `chipseq-counting-common.R`: Common functions for doing read counts
+  in sliding windows across the genome. Entirely obsoleted by the csaw
+  package)
+* `generate-normalized-bigwigs.R`: Used to generate coverage depth
+  bigwig files normalized for sequencing depth and composition bias.
+* `idr-*.R`: A series of scripts designed to run the steps in the IDR
+  pipeline, following the instructions at
+  https://sites.google.com/site/anshulkundaje/projects/idr
+* `peak-count.R`: ChIP-seq read counting in called peaks
+* `peak-count-featurecounts.R`: Alternate implementation of read
+  counting in peaks
+* `promoter-group-count-1kb.R`, `promoter-group-count-2.5kb.R`:
+  Scripts to count ChIP-seq reads in promoter regions using 1kb and
+  2.5kb promoter radii
+* `window-count.R`, `window-count-pointbins.R`: Two alternate methods
+  of counting ChIP-seq reads in sliding bins the size of nucleosomes
+  across the genome
