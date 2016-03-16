@@ -1,20 +1,21 @@
 These files represent several years of on-and-off work. They are
 nowhere close to being organized in an easily runnable pipeline, and I
 do not recommend you try to get them there. File paths are hard-coded;
-intermediate steps are required in between running scripts; half the
-pipeline was run on a cluster, and half on a workstation; the code was
-written for a several-years-old version of R and sporadically updated
-to track changes in R and Bioconductor since then; a lot of code has
-become redundant by more recent additions to R/Bioc, but has not been
-removed; many of the methods used represented the state of the art at
-the time but have since been surpassed.
+intermediate manual steps are required in between running scripts;
+half the pipeline was run on a cluster, and half on a workstation; the
+code was written for a several-years-old version of R and sporadically
+updated to track changes in R and Bioconductor since then; a lot of
+code has become redundant by more recent additions to R/Bioc, but has
+not been removed; many of the methods used represented the state of
+the art at the time but have since been surpassed.
 
 Hence, I instead reccommend that you use these only as reference for
 what analyses were done for the paper, and *not* as a model for how to
 perform your own analysis. If I were to restart this analysis today, I
 would most definitely use the excellent
 [csaw package](https://bioconductor.org/packages/release/bioc/html/csaw.html),
-which did not yet exist at the time this analysis was performed.
+which covers much of the functionality implemented by these scripts,
+but did not yet exist at the time this analysis was performed.
 
 The following is a brief description of the purpose of each script in
 the `workstation scripts` folder. These are all the scripts that were
